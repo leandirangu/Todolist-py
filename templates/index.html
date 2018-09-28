@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Todo App</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<style type="text/css">
+	body{
+		background-color: #ccc;
+		padding-top: 50px;
+	}
+
+	.container{
+		background-color: #fff;
+		max-width: 600px;
+		padding: 25px;
+	}
+
+	</style>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+	<div class="container" id="app">
+
+	
+
+	<form method="post">
+
+		<div class="row">
+			<div class="col">
+				<div class="form-group">
+					<label>Task Name</label>
+					<input v-model="item" type="text" name="taskName" class="form-control"></input>
+				</div>
+		</div>
+		<div class="col">
+			<div class="form-group">
+				<label>Due Date</label>
+				<input type="date" name="taskDate" class="form-control"></input>
+			</div>
+		</div>
+	</div>
+
+		
+
+		
+
+
+		<button v-on:click="addTodo"type="button" class="btn btn-primary btn-block">Add Task</button>
+
+
+
+	</form>
+
+		<hr>
+
+		<h3>Todo Items</h3>
+		<ul>
+			<li v-for="todo in todos">{%raw%} {{todo}} {%endraw%}
+        
+      </li>
+		</ul>
+	</div>
+
+	<script src="{{url_for('static', filename = 'app.js')}}"></script>
+
+</body>
+</html>
